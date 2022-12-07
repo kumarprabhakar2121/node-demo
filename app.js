@@ -5,13 +5,13 @@ const port = 2107;
 
 app.get("/", (req, res) => {
   res.json({
-    msg: "Welcome to the wprld of AWS",
+    msg: "Welcome!",
   });
 });
 
-app.get("/aws", (req, res) => {
+app.get("/*", (req, res) => {
   res.json({
-    msg: "You took longer than we expected",
+    msg: "Hello world!",
   });
 });
 
