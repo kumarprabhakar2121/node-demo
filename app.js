@@ -9,6 +9,47 @@ app.get("/", (req, res) => {
   });
 });
 
+app.get("/details", (req, res) => {
+  const host = req.get("host");
+  const origin = req.get("origin");
+  const {
+    path,
+    url,
+    method,
+    ip,
+    fresh,
+    originalUrl,
+    params,
+    protocol,
+    query,
+    req_res,
+    secure,
+    signedCookies,
+    stale,
+    subdomains,
+    xhr,
+  } = req;
+
+  res.json({
+    host,
+    origin,
+    path,
+    url,
+    method,
+    ip,
+    fresh,
+    originalUrl,
+    params,
+    protocol,
+    query,
+    req_res,
+    secure,
+    signedCookies,
+    stale,
+    subdomains,
+    xhr,
+  });
+});
 app.get("/*", (req, res) => {
   res.json({
     msg: "Hello world!",
